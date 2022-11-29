@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="asm.platform.mapper.user.UserMapper">
+    <resultMap id="BaseResultMap" type="asm.platform.model.user.User">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="account" jdbcType="VARCHAR" property="account"/>
+        <result column="email" jdbcType="VARCHAR" property="email"/>
+        <result column="u_name" jdbcType="VARCHAR" property="uName"/>
+        <result column="tel" jdbcType="VARCHAR" property="tel"/>
+        <result column="u_pwd" jdbcType="VARCHAR" property="uPwd"/>
+        <result column="u_status" jdbcType="SMALLINT" property="uStatus"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="create_user_id" jdbcType="BIGINT" property="createUserId"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="update_user_id" jdbcType="BIGINT" property="updateUserId"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, account, email, u_name, tel, u_pwd, u_status, create_time, create_user_id, update_time,update_user_id
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from u_user
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        delete
+        from u_user
+        where id = #{id,jdbcType=BIGINT}
+    </delete>
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="asm.platform.entity.user.UserEntity" useGeneratedKeys="true">
+        insert into u_user (account, email, u_name,
+                            tel, u_pwd, u_status,
+                            create_time, create_user_id, update_time,
+                            update_user_id)
+        values (#{account,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{uName,jdbcType=VARCHAR},
+                #{tel,jdbcType=VARCHAR}, #{uPwd,jdbcType=VARCHAR}, #{uStatus,jdbcType=SMALLINT},
+                #{createTime,jdbcType=TIMESTAMP}, #{createUserId,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP},
+                #{updateUserId,jdbcType=BIGINT})
+    </insert>
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="asm.platform.entity.user.UserEntity" useGeneratedKeys="true">
+        insert into u_user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="account != null">
+                account,
+            </if>
+            <if test="email != null">
+                email,
+            </if>
+            <if test="uName != null">
+                u_name,
+            </if>
+            <if test="tel != null">
+                tel,
+            </if>
+            <if test="uPwd != null">
+                u_pwd,
+            </if>
+            <if test="uStatus != null">
+                u_status,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="createUserId != null">
+                create_user_id,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+            <if test="updateUserId != null">
+                update_user_id,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="account != null">
+                #{account,jdbcType=VARCHAR},
+            </if>
+            <if test="email != null">
+                #{email,jdbcType=VARCHAR},
+            </if>
+            <if test="uName != null">
+                #{uName,jdbcType=VARCHAR},
+            </if>
+            <if test="tel != null">
+                #{tel,jdbcType=VARCHAR},
+            </if>
+            <if test="uPwd != null">
+                #{uPwd,jdbcType=VARCHAR},
+            </if>
+            <if test="uStatus != null">
+                #{uStatus,jdbcType=SMALLINT},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createUserId != null">
+                #{createUserId,jdbcType=BIGINT},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateUserId != null">
+                #{updateUserId,jdbcType=BIGINT},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="asm.platform.model.user.User">
+        update u_user
+        <set>
+            <if test="account != null">
+                account = #{account,jdbcType=VARCHAR},
+            </if>
+            <if test="email != null">
+                email = #{email,jdbcType=VARCHAR},
+            </if>
+            <if test="uName != null">
+                u_name = #{uName,jdbcType=VARCHAR},
+            </if>
+            <if test="tel != null">
+                tel = #{tel,jdbcType=VARCHAR},
+            </if>
+            <if test="uPwd != null">
+                u_pwd = #{uPwd,jdbcType=VARCHAR},
+            </if>
+            <if test="uStatus != null">
+                u_status = #{uStatus,jdbcType=SMALLINT},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createUserId != null">
+                create_user_id = #{createUserId,jdbcType=BIGINT},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateUserId != null">
+                update_user_id = #{updateUserId,jdbcType=BIGINT},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="asm.platform.model.user.User">
+        update u_user
+        set account        = #{account,jdbcType=VARCHAR},
+            email          = #{email,jdbcType=VARCHAR},
+            u_name         = #{uName,jdbcType=VARCHAR},
+            tel            = #{tel,jdbcType=VARCHAR},
+            u_pwd          = #{uPwd,jdbcType=VARCHAR},
+            u_status       = #{uStatus,jdbcType=SMALLINT},
+            create_time    = #{createTime,jdbcType=TIMESTAMP},
+            create_user_id = #{createUserId,jdbcType=BIGINT},
+            update_time    = #{updateTime,jdbcType=TIMESTAMP},
+            update_user_id = #{updateUserId,jdbcType=BIGINT}
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+</mapper>

@@ -1,0 +1,54 @@
+
+spring:
+  #swagger
+  swagger:
+    enabled: true
+  # swagger3
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  # redis
+  redis:
+    database: 0
+    host: 127.0.0.1
+    jedis:
+      pool:
+        max-active: 200
+        max-idle: 8
+        max-wait: -1ms
+        min-idle: 0
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        max-wait: -1ms
+        min-idle: 0
+      shutdown-timeout: 500ms
+    password: ''
+    port: 6379
+    # session ??redis ?
+    enabled: true
+  # mongodb
+  data:
+    mongodb:
+      # mongodb 没有开启任何安全协议
+      uri: mongodb://127.0.0.1:27007/sst_ump
+
+      # mongodb 存在密码则进行下面配置
+#      host: 127.0.0.1
+#      port: 27017
+#      database: sst_ump
+#      username:
+#      password:
+
+#  database
+datasource:
+  master:
+    url: jdbc:mysql://127.0.0.1:3308/asm?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+  slave:
+    url: jdbc:mysql://127.0.0.1:3308/asm?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+

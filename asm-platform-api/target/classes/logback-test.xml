@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+    <contextName>asm-platform-api</contextName>
+    <property name="root.logger.level" value="INFO"/>
+    <property name="log.path" value="D:/export/Logs"/>
+    <property name="app.name" value="asm-platform-api"/>
+    <property name="app.version" value="1.2"/>
+
+    <property name="log.file" value="${log.path}/${app.name}.log"/>
+    <property name="log.rollingFile" value="${log.path}/${app.name}.%d{yyyy-MM-dd}.%i.log.gz"/>
+
+    <appender name="fileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${log.file}</File>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <ImmediateFlush>true</ImmediateFlush>
+            <pattern>%d{HH:mm:ss.SSS} %contextName [%thread] %-5level %logger{36} -%msg%n</pattern>
+        </encoder>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${log.rollingFile}</FileNamePattern>
+            <MaxHistory>3</MaxHistory>
+            <totalSizeCap>5GB</totalSizeCap>
+
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>100MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="asyncFileAppender" class="ch.qos.logback.classic.AsyncAppender">
+        <queueSize>5000</queueSize>
+        <discardingThreshold>0</discardingThreshold>
+        <includeCallerData>true</includeCallerData>
+        <appender-ref ref="fileAppender"/>
+    </appender>
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %contextName [%thread] %-5level %logger{36} -%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 如果要输出业务日志, 请修改为 TRACE -->
+    <logger name="com.asm.platform" level="INFO"></logger>
+    <logger name="org.springframework.web" level="ERROR"></logger>
+    <logger name="org.springframework" level="ERROR"></logger>
+    <logger name="ch.qos.logback" level="OFF"></logger>
+    <logger name="org.apache" level="ERROR"></logger>
+    <logger name="org.springframework.data.mongodb.core" level="DEBUG"></logger>
+
+    <root level="${root.logger.level}">
+        <appender-ref ref="asyncFileAppender"/>
+        <appender-ref ref="console"/>
+    </root>
+</configuration>

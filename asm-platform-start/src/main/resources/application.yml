@@ -1,0 +1,48 @@
+# server
+server:
+  port: 12345
+  undertow:
+    buffer-size: 2MB
+    direct-buffers: true
+    threads:
+      io: 16
+      worker: 128
+    always-set-keep-alive: true
+
+  servlet:
+    context-path: /v1
+
+# spring
+spring:
+  application:
+    name: ASM
+    code: asm-platform
+  profiles:
+    active: local
+
+  # date
+  jackson:
+    time-zone: GMT+8
+    generator:
+      write_numbers_as_strings: true
+    date-format: yyyy-MM-dd HH:mm:ss
+
+  # servlet
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
+
+  # thymeleaf
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    encoding: utf-8
+
+# PageHelper
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql

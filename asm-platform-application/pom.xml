@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>asm.platform</groupId>
+        <artifactId>asm-platform</artifactId>
+        <version>1.0</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>asm.platform.application</groupId>
+    <artifactId>asm-platform-application</artifactId>
+    <version>1.0</version>
+    <name>asm-platform-application</name>
+    <description>asm-platform-application</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <!--domain 内部依赖服务-->
+        <dependency>
+            <groupId>asm.platform.infrastructure</groupId>
+            <artifactId>asm-platform-infrastructure</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- validation -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+
+<!--        &lt;!&ndash;mapstruct&ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.mapstruct</groupId>-->
+<!--            <artifactId>mapstruct</artifactId>-->
+<!--        </dependency>-->
+
+    </dependencies>
+
+</project>
