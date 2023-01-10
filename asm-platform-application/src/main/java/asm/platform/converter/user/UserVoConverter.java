@@ -6,6 +6,8 @@ import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;
 import org.mapstruct.factory.Mappers;
 
+import java.util.List;
+
 /**
  * 用户 entity - vo
  *
@@ -24,5 +26,12 @@ public interface UserVoConverter {
      * @return
      */
     UserVo toVo(UserEntity userEntity);
+
+    /**
+     * entityList to Vo
+     * @param userEntityList
+     * @return
+     */
+    List<UserVo> toVoList(List<UserEntity> userEntityList);
 
 }

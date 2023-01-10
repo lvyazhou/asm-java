@@ -1,158 +1,161 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="asm.platform.mapper.user.UserMapper">
-    <resultMap id="BaseResultMap" type="asm.platform.model.user.User">
-        <id column="id" jdbcType="BIGINT" property="id"/>
-        <result column="account" jdbcType="VARCHAR" property="account"/>
-        <result column="email" jdbcType="VARCHAR" property="email"/>
-        <result column="u_name" jdbcType="VARCHAR" property="uName"/>
-        <result column="tel" jdbcType="VARCHAR" property="tel"/>
-        <result column="u_pwd" jdbcType="VARCHAR" property="uPwd"/>
-        <result column="u_status" jdbcType="SMALLINT" property="uStatus"/>
-        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
-        <result column="create_user_id" jdbcType="BIGINT" property="createUserId"/>
-        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
-        <result column="update_user_id" jdbcType="BIGINT" property="updateUserId"/>
+    <!-- Result Map-->
+    <resultMap id="uUserResultMap" type="asm.platform.model.user.User">
+        <result column="id" property="id"/>
+        <result column="account" property="account"/>
+        <result column="email" property="email"/>
+        <result column="u_name" property="uName"/>
+        <result column="tel" property="tel"/>
+        <result column="u_pwd" property="uPwd"/>
+        <result column="u_status" property="uStatus"/>
+        <result column="create_time" property="createTime"/>
+        <result column="create_user_id" property="createUserId"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="update_user_id" property="updateUserId"/>
     </resultMap>
+    <!-- u_user table all fields -->
     <sql id="Base_Column_List">
-        id, account, email, u_name, tel, u_pwd, u_status, create_time, create_user_id, update_time,update_user_id
+        id
+        ,account,email,u_name,tel,u_pwd,u_status,create_time,create_user_id,update_time,update_user_id
     </sql>
-    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!-- 查询条件 -->
+    <sql id="Example_Where_Clause">
+        where 1=1
+        <trim suffixOverrides=",">
+            <if test="id != null and id != ''">
+                and id = #{id}
+            </if>
+            <if test="account != null and account != ''">
+                and account = #{account}
+            </if>
+            <if test="email != null and email != ''">
+                and email = #{email}
+            </if>
+            <if test="uName != null and uName != ''">
+                and u_name = #{uName}
+            </if>
+            <if test="tel != null and tel != ''">
+                and tel = #{tel}
+            </if>
+            <if test="uPwd != null and uPwd != ''">
+                and u_pwd = #{uPwd}
+            </if>
+            <if test="uStatus != null and uStatus != ''">
+                and u_status = #{uStatus}
+            </if>
+            <if test="createTime != null and createTime != ''">
+                and create_time = #{createTime}
+            </if>
+            <if test="createUserId != null and createUserId != ''">
+                and create_user_id = #{createUserId}
+            </if>
+            <if test="updateTime != null and updateTime != ''">
+                and update_time = #{updateTime}
+            </if>
+            <if test="updateUserId != null and updateUserId != ''">
+                and update_user_id = #{updateUserId}
+            </if>
+        </trim>
+    </sql>
+
+    <!-- 插入记录 -->
+    <insert id="insert" parameterType="Object" useGeneratedKeys="true" keyProperty="id">
+        insert into u_user(id, account, email, u_name, tel, u_pwd, u_status, create_time, create_user_id, update_time,
+                           update_user_id)
+        values (#{id}, #{account}, #{email}, #{uName}, #{tel}, #{uPwd}, #{uStatus}, now(), #{createUserId}, now(),
+                #{updateUserId})
+    </insert>
+
+    <!-- 批量插入记录 -->
+    <insert id="insertBatch" parameterType="Object">
+        insert into wos_isv_file(id,isv_analysis_id,isv_file_path,isv_file_name,isv_file_remarks)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.id},#{item.isvAnalysisId},#{item.isvFilePath},#{item.isvFileName},#{item.isvFileRemarks})
+        </foreach>
+    </insert>
+
+    <!-- 修改记录，只修改只不为空的字段 -->
+    <update id="updateUUserBySelective" parameterType="Object">
+        update u_user set
+        <trim suffixOverrides=",">
+            <if test="account != null  ">
+                account=#{account},
+            </if>
+            <if test="email != null  ">
+                email=#{email},
+            </if>
+            <if test="uName != null  ">
+                u_name=#{uName},
+            </if>
+            <if test="tel != null  ">
+                tel=#{tel},
+            </if>
+            <if test="uPwd != null  ">
+                u_pwd=#{uPwd},
+            </if>
+            <if test="uStatus != null  ">
+                u_status=#{uStatus},
+            </if>
+            <if test="createTime != null  ">
+                create_time=#{createTime},
+            </if>
+            <if test="createUserId != null  ">
+                create_user_id=#{createUserId},
+            </if>
+            <if test="updateTime != null  ">
+                update_time=#{updateTime},
+            </if>
+            <if test="updateUserId != null  ">
+                update_user_id=#{updateUserId},
+            </if>
+        </trim>
+        where id=#{id}
+    </update>
+
+    <!-- 删除记录 -->
+    <delete id="deleteById" parameterType="Object">
+        delete
+        from u_user
+        where id = #{id}
+    </delete>
+
+    <!-- 批量删除记录 -->
+    <delete id="deleteByIds" parameterType="java.lang.String">
+        <![CDATA[
+delete 	 from u_user where id in
+  ]]>
+
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            ${id}
+        </foreach>
+    </delete>
+
+    <!-- 根据id查询  -->
+    <select id="queryById" resultMap="uUserResultMap" parameterType="Object">
+        select
+        <include refid="Base_Column_List"/>
+        from u_user where id = #{id}
+    </select>
+
+    <!-- 查询列表 -->
+    <select id="listByPage" resultMap="uUserResultMap" parameterType="Object">
         select
         <include refid="Base_Column_List"/>
         from u_user
-        where id = #{id,jdbcType=BIGINT}
+        <include refid="Example_Where_Clause"/>
     </select>
-    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-        delete
+
+    <!-- 查询列表 -->
+    <select id="getUUserMapList" resultMap="uUserResultMap" parameterType="Object">
+        select
+        <include refid="Base_Column_List"/>
         from u_user
-        where id = #{id,jdbcType=BIGINT}
-    </delete>
-    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="asm.platform.entity.user.UserEntity" useGeneratedKeys="true">
-        insert into u_user (account, email, u_name,
-                            tel, u_pwd, u_status,
-                            create_time, create_user_id, update_time,
-                            update_user_id)
-        values (#{account,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{uName,jdbcType=VARCHAR},
-                #{tel,jdbcType=VARCHAR}, #{uPwd,jdbcType=VARCHAR}, #{uStatus,jdbcType=SMALLINT},
-                #{createTime,jdbcType=TIMESTAMP}, #{createUserId,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP},
-                #{updateUserId,jdbcType=BIGINT})
-    </insert>
-    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="asm.platform.entity.user.UserEntity" useGeneratedKeys="true">
-        insert into u_user
-        <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="account != null">
-                account,
-            </if>
-            <if test="email != null">
-                email,
-            </if>
-            <if test="uName != null">
-                u_name,
-            </if>
-            <if test="tel != null">
-                tel,
-            </if>
-            <if test="uPwd != null">
-                u_pwd,
-            </if>
-            <if test="uStatus != null">
-                u_status,
-            </if>
-            <if test="createTime != null">
-                create_time,
-            </if>
-            <if test="createUserId != null">
-                create_user_id,
-            </if>
-            <if test="updateTime != null">
-                update_time,
-            </if>
-            <if test="updateUserId != null">
-                update_user_id,
-            </if>
-        </trim>
-        <trim prefix="values (" suffix=")" suffixOverrides=",">
-            <if test="account != null">
-                #{account,jdbcType=VARCHAR},
-            </if>
-            <if test="email != null">
-                #{email,jdbcType=VARCHAR},
-            </if>
-            <if test="uName != null">
-                #{uName,jdbcType=VARCHAR},
-            </if>
-            <if test="tel != null">
-                #{tel,jdbcType=VARCHAR},
-            </if>
-            <if test="uPwd != null">
-                #{uPwd,jdbcType=VARCHAR},
-            </if>
-            <if test="uStatus != null">
-                #{uStatus,jdbcType=SMALLINT},
-            </if>
-            <if test="createTime != null">
-                #{createTime,jdbcType=TIMESTAMP},
-            </if>
-            <if test="createUserId != null">
-                #{createUserId,jdbcType=BIGINT},
-            </if>
-            <if test="updateTime != null">
-                #{updateTime,jdbcType=TIMESTAMP},
-            </if>
-            <if test="updateUserId != null">
-                #{updateUserId,jdbcType=BIGINT},
-            </if>
-        </trim>
-    </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="asm.platform.model.user.User">
-        update u_user
-        <set>
-            <if test="account != null">
-                account = #{account,jdbcType=VARCHAR},
-            </if>
-            <if test="email != null">
-                email = #{email,jdbcType=VARCHAR},
-            </if>
-            <if test="uName != null">
-                u_name = #{uName,jdbcType=VARCHAR},
-            </if>
-            <if test="tel != null">
-                tel = #{tel,jdbcType=VARCHAR},
-            </if>
-            <if test="uPwd != null">
-                u_pwd = #{uPwd,jdbcType=VARCHAR},
-            </if>
-            <if test="uStatus != null">
-                u_status = #{uStatus,jdbcType=SMALLINT},
-            </if>
-            <if test="createTime != null">
-                create_time = #{createTime,jdbcType=TIMESTAMP},
-            </if>
-            <if test="createUserId != null">
-                create_user_id = #{createUserId,jdbcType=BIGINT},
-            </if>
-            <if test="updateTime != null">
-                update_time = #{updateTime,jdbcType=TIMESTAMP},
-            </if>
-            <if test="updateUserId != null">
-                update_user_id = #{updateUserId,jdbcType=BIGINT},
-            </if>
-        </set>
-        where id = #{id,jdbcType=BIGINT}
-    </update>
-    <update id="updateByPrimaryKey" parameterType="asm.platform.model.user.User">
-        update u_user
-        set account        = #{account,jdbcType=VARCHAR},
-            email          = #{email,jdbcType=VARCHAR},
-            u_name         = #{uName,jdbcType=VARCHAR},
-            tel            = #{tel,jdbcType=VARCHAR},
-            u_pwd          = #{uPwd,jdbcType=VARCHAR},
-            u_status       = #{uStatus,jdbcType=SMALLINT},
-            create_time    = #{createTime,jdbcType=TIMESTAMP},
-            create_user_id = #{createUserId,jdbcType=BIGINT},
-            update_time    = #{updateTime,jdbcType=TIMESTAMP},
-            update_user_id = #{updateUserId,jdbcType=BIGINT}
-        where id = #{id,jdbcType=BIGINT}
-    </update>
+        <include refid="Example_Where_Clause"/>
+    </select>
+
 </mapper>

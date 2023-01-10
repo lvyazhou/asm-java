@@ -1,4 +1,4 @@
-package asm.platform.controller;
+package asm.platform.controller.user;
 
 import asm.platform.bean.ResponseEntity;
 import asm.platform.entity.asm.AsmUserEntity;

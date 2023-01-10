@@ -15,4 +15,5 @@ D:\pocProject\asm-platform\asm-platform-application\src\main\java\asm\platform\d
 D:\pocProject\asm-platform\asm-platform-application\src\main\java\asm\platform\service\asm\impl\AsmUserServiceImpl.java
 D:\pocProject\asm-platform\asm-platform-application\src\main\java\asm\platform\service\asm\impl\AsmRoleServiceImpl.java
 D:\pocProject\asm-platform\asm-platform-application\src\main\java\asm\platform\service\common\JsonSerializeService.java
+D:\pocProject\asm-platform\asm-platform-application\src\main\java\asm\platform\dto\user\UserQueryDto.java
 D:\pocProject\asm-platform\asm-platform-application\src\main\java\asm\platform\service\user\impl\UserServiceImpl.java

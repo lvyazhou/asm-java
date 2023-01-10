@@ -29,6 +29,7 @@ asm\platform\common\util\encrypt\base64\Shared.class
 asm\platform\repository\id\IdGeneratorWorker.class
 asm\platform\model\asm\AsmRole.class
 asm\platform\common\util\StrFormatter.class
+asm\platform\model\user\UserQuery.class
 asm\platform\common\util\encrypt\MD532Tool.class
 asm\platform\bean\DataSourceKey.class
 asm\platform\common\util\encrypt\RSACoder.class

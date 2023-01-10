@@ -1,7 +1,9 @@
 package asm.platform.assemler.user;
 
 import asm.platform.dto.user.UserDto;
+import asm.platform.dto.user.UserQueryDto;
 import asm.platform.entity.user.UserEntity;
+import asm.platform.entity.user.UserQueryEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;
 import org.mapstruct.factory.Mappers;
@@ -24,5 +26,13 @@ public interface UserDtoAssembler {
      * @return
      */
     UserEntity toEntity(UserDto userDto);
+
+    /**
+     * query dto to entity
+     *
+     * @param userQueryDto
+     * @return
+     */
+    UserQueryEntity toQueryEntity(UserQueryDto userQueryDto);
 
 }

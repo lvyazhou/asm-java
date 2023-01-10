@@ -1,8 +1,11 @@
 package asm.platform.service.user;
 
 import asm.platform.dto.user.UserDto;
+import asm.platform.dto.user.UserQueryDto;
 import asm.platform.exception.BllException;
 import asm.platform.vo.user.UserVo;
+
+import java.util.List;
 
 /**
  * UserService
@@ -19,4 +22,12 @@ public interface UserService {
      * @return
      */
     int add(UserDto dto) throws BllException;
+
+    /**
+     * 用户查询分页列表
+     *
+     * @param userQueryDto
+     * @return
+     */
+    List<UserVo> findUserList(UserQueryDto userQueryDto);
 }

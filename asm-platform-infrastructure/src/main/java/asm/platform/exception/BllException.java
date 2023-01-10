@@ -1,5 +1,7 @@
 package asm.platform.exception;
 
+import asm.platform.common.enums.ErrorCodeEnum;
+
 /**
  * Exception for business operate.
  *
@@ -40,5 +42,14 @@ public class BllException extends Throwable {
      */
     public BllException(String message) {
         super(message);
+    }
+
+    /**
+     * 根据errorcode 返回业务错误代码
+     * @param errorCodeEnum
+     */
+    public BllException(ErrorCodeEnum errorCodeEnum) {
+        super(errorCodeEnum.getErrorMessage());
+        this.rCode = errorCodeEnum.getCode();
     }
 }

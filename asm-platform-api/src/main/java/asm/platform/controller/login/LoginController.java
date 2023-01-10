@@ -1,4 +1,4 @@
-package asm.platform.controller;
+package asm.platform.controller.login;
 
 import asm.platform.bean.ResponseEntity;
 import asm.platform.dto.login.LoginDto;

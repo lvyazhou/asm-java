@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true" scanPeriod="60 seconds" debug="false">
     <contextName>asm-platform-api</contextName>
-    <property name="root.logger.level" value="INFO"/>
+    <property name="root.logger.level" value="DEBUG"/>
     <property name="log.path" value="D:/export/Logs"/>
     <property name="app.name" value="asm-platform-api"/>
     <property name="app.version" value="1.2"/>
@@ -41,7 +41,7 @@
     </appender>
 
     <!-- 如果要输出业务日志, 请修改为 TRACE -->
-    <logger name="com.asm.platform" level="INFO"></logger>
+    <logger name="com.asm.platform" level="DEBUG"></logger>
     <logger name="org.springframework.web" level="ERROR"></logger>
     <logger name="org.springframework" level="ERROR"></logger>
     <logger name="ch.qos.logback" level="OFF"></logger>

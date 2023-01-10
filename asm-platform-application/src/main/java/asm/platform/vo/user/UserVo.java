@@ -15,18 +15,25 @@ import java.math.BigInteger;
  * @date 2022-11-11
  */
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
 @ApiModel(description = "用户信息返回vo")
 public class UserVo {
     /**
      * id
      */
-    private BigInteger id;
+    private Long id;
 
     /**
-     * uname
+     * 账户名称
+     */
+    private String account;
+
+    /**
+     * 邮件
+     */
+    private String email;
+
+    /**
+     * 姓名
      */
     private String uName;
 }

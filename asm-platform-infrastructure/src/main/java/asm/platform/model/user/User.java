@@ -1,9 +1,6 @@
 package asm.platform.model.user;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
@@ -15,7 +12,8 @@ import java.sql.Timestamp;
  * @date 2022-11-11
  */
 @Data
-public class User {
+public class User implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     /**
      * id

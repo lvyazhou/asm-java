@@ -20,6 +20,7 @@ D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platfor
 D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\repository\id\IdGeneratorWorker.java
 D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\model\asm\AsmUser.java
 D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\common\util\encrypt\DHCoder.java
+D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\model\user\UserQuery.java
 D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\exception\BusinessException.java
 D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\common\util\encrypt\DES3Coder.java
 D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\common\util\encrypt\PBECoder.java

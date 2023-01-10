@@ -1,4 +1,5 @@
 asm\platform\entity\user\UserEntity.class
 asm\platform\repository\redis\RedisRepository.class
+asm\platform\entity\user\UserQueryEntity.class
 asm\platform\repository\db\user\UserRepository.class
 asm\platform\entity\asm\AsmUserEntity.class

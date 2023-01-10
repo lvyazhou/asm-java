@@ -1,4 +1,4 @@
-package asm.platform.controller;
+package asm.platform.controller.login;
 
 import asm.platform.common.util.encrypt.Base64Utils;
 import org.springframework.expression.Expression;

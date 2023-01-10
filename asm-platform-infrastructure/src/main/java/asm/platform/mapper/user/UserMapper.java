@@ -1,7 +1,10 @@
 package asm.platform.mapper.user;
 
 import asm.platform.model.user.User;
+import asm.platform.model.user.UserQuery;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 /**
  * 用户信息 数据层
@@ -13,20 +16,58 @@ import org.apache.ibatis.annotations.Mapper;
 public interface UserMapper {
 
     /**
-     * 新增用户
-     *
-     * @param user 用户信息
-     * @return 结果
+     * 批量删除方法
+     * @param ids
+     * @return
      */
-    int insert(User user);
+    int deleteByIds(final String[] ids);
 
-    int deleteByPrimaryKey(Long id);
+    /**
+     * 单个删除方法
+     * @param ids
+     * @return
+     */
+    int deleteById(final Integer ids);
 
-    int insertSelective(User record);
+    /**
+     * 插入方法
+     * @param record
+     * @return
+     */
+    int insert(final User record);
 
-    User selectByPrimaryKey(Long id);
+    /**
+     * 批量插入方法
+     * @param list
+     * @return
+     */
+    int insertBatch(final List<User> list);
 
-    int updateByPrimaryKeySelective(User record);
+    /**
+     * 根据主键查询实体（查看方法）
+     * @param id
+     * @return
+     */
+    User queryById(final Integer id);
 
-    int updateByPrimaryKey(User record);
+    /**
+     * 更新不为空方法
+     * @param record
+     * @return
+     */
+    int updateUUserBySelective(final User record);
+
+    /**
+     * 查询方法
+     * @param query
+     * @return
+     */
+    List<User> listByPage(final UserQuery query);
+
+    /**
+     * 查询方法list
+     * @param query
+     * @return
+     */
+    public List<User> getUUserMapList(final User query);
 }

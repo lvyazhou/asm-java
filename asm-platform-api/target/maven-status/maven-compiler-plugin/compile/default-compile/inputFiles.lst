@@ -1,4 +1,7 @@
+D:\pocProject\asm-platform\asm-platform-api\src\main\java\asm\platform\controller\login\SSOLoginController.java
 D:\pocProject\asm-platform\asm-platform-api\src\main\java\asm\platform\config\SwaggerConfig.java
+D:\pocProject\asm-platform\asm-platform-api\src\main\java\asm\platform\controller\BaseController.java
+D:\pocProject\asm-platform\asm-platform-api\src\main\java\asm\platform\controller\user\UserController.java
 D:\pocProject\asm-platform\asm-platform-api\src\main\java\asm\platform\config\DataSourceConfigurer.java
 D:\pocProject\asm-platform\asm-platform-api\src\main\java\asm\platform\utils\ServletUtils.java
 D:\pocProject\asm-platform\asm-platform-api\src\main\java\asm\platform\config\ApiMvcConfig.java
@@ -6,13 +9,11 @@ D:\pocProject\asm-platform\asm-platform-api\src\main\java\asm\platform\utils\Con
 D:\pocProject\asm-platform\asm-platform-api\src\main\java\asm\platform\annotation\TargetDataSource.java
 D:\pocProject\asm-platform\asm-platform-api\src\main\java\asm\platform\aspect\ControllerAspect.java
 D:\pocProject\asm-platform\asm-platform-api\src\main\java\asm\platform\config\DruidServletConfig.java
-D:\pocProject\asm-platform\asm-platform-api\src\main\java\asm\platform\controller\AsmUserController.java
 D:\pocProject\asm-platform\asm-platform-api\src\main\java\asm\platform\config\JedisClusterConfig.java
-D:\pocProject\asm-platform\asm-platform-api\src\main\java\asm\platform\controller\SSOLoginController.java
 D:\pocProject\asm-platform\asm-platform-api\src\main\java\asm\platform\datasource\DynamicRoutingDataSource.java
+D:\pocProject\asm-platform\asm-platform-api\src\main\java\asm\platform\controller\user\AsmUserController.java
+D:\pocProject\asm-platform\asm-platform-api\src\main\java\asm\platform\controller\login\LoginController.java
 D:\pocProject\asm-platform\asm-platform-api\src\main\java\asm\platform\interceptor\ApiInterceptor.java
 D:\pocProject\asm-platform\asm-platform-api\src\main\java\asm\platform\utils\ResponseWriter.java
 D:\pocProject\asm-platform\asm-platform-api\src\main\java\asm\platform\datasource\DynamicDataSourceContextHolder.java
 D:\pocProject\asm-platform\asm-platform-api\src\main\java\asm\platform\config\CorsConfigurer.java
-D:\pocProject\asm-platform\asm-platform-api\src\main\java\asm\platform\controller\UserController.java
-D:\pocProject\asm-platform\asm-platform-api\src\main\java\asm\platform\controller\LoginController.java
