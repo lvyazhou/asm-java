@@ -1,4 +1,5 @@
 asm\platform\common\util\encrypt\DESCoder.class
+asm\platform\base\mongo\impl\AsmBaseRepositoryImpl.class
 asm\platform\bean\DataSourceType.class
 asm\platform\convert\asm\AsmUserConvertImpl.class
 asm\platform\common\util\GsonUtil.class
@@ -13,7 +14,6 @@ asm\platform\common\util\GsonMapTypeAdapter.class
 asm\platform\common\util\encrypt\ACICMD5Utils.class
 asm\platform\common\util\GsonUtil$1.class
 asm\platform\common\util\encrypt\base64\Base64OutputStream.class
-asm\platform\base\mongo\AsmDeptOperations.class
 asm\platform\convert\user\UserConvert.class
 asm\platform\common\util\encrypt\base64\Base64.class
 asm\platform\common\util\encrypt\DES3Coder.class
@@ -28,12 +28,10 @@ asm\platform\bean\PageDomain.class
 asm\platform\common\util\encrypt\base64\Shared.class
 asm\platform\repository\id\IdGeneratorWorker.class
 asm\platform\model\asm\AsmRole.class
-asm\platform\model\asm\QAsmUser.class
 asm\platform\common\util\StrFormatter.class
 asm\platform\common\util\encrypt\MD532Tool.class
 asm\platform\bean\DataSourceKey.class
 asm\platform\common\util\encrypt\RSACoder.class
-asm\platform\model\user\User$UserBuilder.class
 asm\platform\model\user\User.class
 asm\platform\common\util\GsonMapTypeAdapter$1.class
 asm\platform\repository\redis\RedisRepositoryImpl.class
@@ -54,6 +52,7 @@ asm\platform\common\util\StringUtils.class
 asm\platform\common\util\encrypt\PBECoder.class
 asm\platform\repository\BaseRepository.class
 asm\platform\common\util\PubFun.class
+asm\platform\base\mongo\AsmBaseOperations.class
 asm\platform\common\util\CharsetKit.class
 asm\platform\mapper\user\UserMapper.class
 asm\platform\model\es\OpLog.class

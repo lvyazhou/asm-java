@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="${bussPackage}.dao#if($!entityPackage).${entityPackage}#end.${className}Mapper" > 
+	<!-- Result Map-->
+	<resultMap id="${lowerName}ResultMap" type="${bussPackage}.model#if($!entityPackage).${entityPackage}#end.$!{className}" >
+	#foreach($item in $!{columnDatas})
+		<result column="$!item.columnName" property="$!item.formatColumnName"/>
+	#end
+	</resultMap>
+	<!-- $!{tableName} table all fields -->
+	<sql id="Base_Column_List" >
+		 $!{SQL.columnFields}
+	</sql>
+	<!-- 查询条件 -->
+	<sql id="Example_Where_Clause">
+	where 1=1
+	<trim  suffixOverrides="," >
+	#foreach($item in $!{columnDatas})
+		#set($testStr = $!item.formatColumnName + " != null and " + $!item.formatColumnName + " != ''")
+		#if($!item.dataType == 'String')
+			#set($testStr = $!testStr + " and " + $!item.formatColumnName + " != ''")
+	 	#end
+	<if test="$!testStr" >
+		    and $!item.columnName =  #{$!item.formatColumnName}
+		</if>
+	#end
+	</trim>
+	</sql>
+	
+	<!-- 插入${tableNameSimple}记录 -->
+	<insert id="insert" parameterType="Object" useGeneratedKeys="true" keyProperty="id" >
+	$!{SQL.insert}
+	</insert>
+	
+	<!-- 批量插入${tableNameSimple}记录 -->
+	<insert id="insertBatch" parameterType="Object" >
+		insert into wos_isv_file(id,isv_analysis_id,isv_file_path,isv_file_name,isv_file_remarks)
+	 	values
+	   <foreach collection="list" item="item" index="index" separator="," >  
+		(#{item.id},#{item.isvAnalysisId},#{item.isvFilePath},#{item.isvFileName},#{item.isvFileRemarks})
+		</foreach>
+	</insert>
+	 
+	 <!-- 修改${tableNameSimple}记录，只修改只不为空的字段 -->
+	<update id="update${className}BySelective" parameterType="Object" >
+		$!{SQL.updateSelective}
+	</update>
+	
+	<!-- 删除${tableNameSimple}记录 -->
+	<delete id="deleteById" parameterType="Object">
+		$!{SQL.delete}
+	</delete>
+	
+	<!-- 批量删除${tableNameSimple}记录 -->
+	<delete id="deleteByIds" parameterType="java.lang.String">
+		$!{SQL.deletes}
+		<foreach item="id" collection="array" open="(" separator="," close=")">
+			  $!{SQL.ids}
+	    </foreach>  
+	</delete>
+	 
+	<!-- 根据id查询 ${tableNameSimple} -->
+	<select id="queryById"  resultMap="${lowerName}ResultMap" parameterType="Object">
+		$!{SQL.selectById}
+	</select>
+	
+	<!-- 查询${tableNameSimple}列表 -->
+	<select id="listByPage" resultMap="${lowerName}ResultMap"  parameterType="Object">
+		select 
+		<include refid="Base_Column_List"/>
+		from ${tableName} 
+		<include refid="Example_Where_Clause"/>
+	</select>
+	
+	<!-- 查询${tableNameSimple}列表 -->
+	<select id="get${className}MapList" resultMap="${lowerName}ResultMap"  parameterType="Object">
+		select 
+		<include refid="Base_Column_List"/>
+		from ${tableName} 
+		<include refid="Example_Where_Clause"/>
+	</select>
+
+</mapper>

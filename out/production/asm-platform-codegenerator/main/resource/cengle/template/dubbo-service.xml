@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!-- dubbo 全局环境变量设置 -->
+    <dubbo:application name="${dubbo.application.name}" version="${dubbo.application.version}" owner="${dubbo.application.owner}" organization="${dubbo.application.organization}" logger="${dubbo.application.logger}" compiler="${dubbo.application.compiler}" />
+
+    <dubbo:registry address="${dubbo.registry.address}" />
+
+    <dubbo:provider threadpool="${dubbo.provider.threadpool}"
+                    threads="${dubbo.provider.threads}"
+                    accepts="${dubbo.provider.accepts}"
+                    version="${dubbo.provider.version}"
+                    owner="${dubbo.provider.owner}"
+                    connections="${dubbo.provider.connections}"
+                    loadbalance="${dubbo.provider.loadbalance}"
+                    async="${dubbo.provider.async}"
+                    accesslog="${dubbo.provider.accesslog}"
+                    proxy="${dubbo.provider.proxy}"
+                    cluster="${dubbo.provider.cluster}"
+                    buffer="${dubbo.provider.buffer}"
+                    iothreads="${dubbo.provider.iothreads}"
+                    layer="${dubbo.provider.layer}"
+                    group="${dubbo.provider.group}"
+                    timeout="${dubbo.provider.timeout}"
+                    retries="${dubbo.provider.retries}"/>
+
+    <dubbo:protocol name="dubbo" port="${dubbo.protocol.port}" dispatcher="all" />
+
+    <!-- 仓库分类表 -->
+    <dubbo:service interface="com.ikongjian.hades.service.ISettleStoreOwnerTypeService"
+                   ref="settleStoreOwnerTypeServiceImpl" owner="lvyz"/>
+</beans>

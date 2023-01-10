@@ -15,10 +15,7 @@ import java.sql.Timestamp;
  * @date 2022-11-11
  */
 @Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
-public class User implements Serializable {
+public class User {
 
     /**
      * id

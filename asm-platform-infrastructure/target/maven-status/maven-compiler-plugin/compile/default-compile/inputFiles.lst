@@ -9,7 +9,6 @@ D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platfor
 D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\bean\ResultCode.java
 D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\common\util\GsonUtil.java
 D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\repository\mongo\AsmRoleRepository.java
-D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\model\asm\QAsmUser.java
 D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\common\util\StringUtils.java
 D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\common\util\encrypt\RSACoder.java
 D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\common\util\encrypt\base64\Base64.java
@@ -24,11 +23,11 @@ D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platfor
 D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\exception\BusinessException.java
 D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\common\util\encrypt\DES3Coder.java
 D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\common\util\encrypt\PBECoder.java
-D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\base\mongo\AsmDeptOperations.java
 D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\common\util\CharsetKit.java
 D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\common\util\GsonMapTypeAdapter.java
 D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\base\mongo\BaseMongoRepository.java
 D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\common\util\encrypt\DESCoder.java
+D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\base\mongo\impl\AsmBaseRepositoryImpl.java
 D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\common\util\DateUtils.java
 D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\common\util\encrypt\MD532Tool.java
 D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\common\constant\ConstantRegular.java
@@ -43,7 +42,6 @@ D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platfor
 D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\bean\AjaxResult.java
 D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\common\util\encrypt\WeChatMD5.java
 D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\model\asm\AsmDept.java
-D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\base\mongo\impl\AsmDeptRepositoryImpl.java
 D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\base\mongo\BaseMongoRepositoryFactoryBean.java
 D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\repository\db\user\UserRepositoryImpl.java
 D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\common\util\encrypt\base64\Base64InputStream.java
@@ -53,6 +51,7 @@ D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platfor
 D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\bean\DataSourceType.java
 D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\base\mongo\MongoRepositoryConfig.java
 D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\exception\BllException.java
+D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\base\mongo\AsmBaseOperations.java
 D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\repository\BaseRepository.java
 D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\common\constant\Constants.java
 D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\common\util\encrypt\Base64Utils.java

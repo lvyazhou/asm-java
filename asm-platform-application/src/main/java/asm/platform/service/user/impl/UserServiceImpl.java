@@ -41,6 +41,7 @@ public class UserServiceImpl implements UserService {
         UserEntity user = UserDtoAssembler.MAPPER.toEntity(dto);
         user.setUStatus((short) 1);
         user.setCreateTime(new Timestamp(System.currentTimeMillis()));
+        user.setCreateUserId(111111111L);
         return this.userRepository.saveUser(user);
     }
 }

@@ -8,6 +8,7 @@ import lombok.Data;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
+import java.io.Serializable;
 
 /**
  * 用户信息 请求对象
@@ -17,7 +18,7 @@ import javax.validation.constraints.Pattern;
  */
 @Data
 @ApiModel(description = "用户信息请求dto")
-public class UserDto {
+public class UserDto implements Serializable {
 
     @ApiModelProperty(value = "用户账号", example = "lvyazhou")
     @NotEmpty(message = "用户账号为空")

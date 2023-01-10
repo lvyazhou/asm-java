@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!-- dubbo 全局环境变量设置 -->
+    <dubbo:application name="${dubbo.application.name}"
+                       version="${dubbo.application.version}"
+                       owner="${dubbo.application.owner}"
+                       organization="${dubbo.application.organization}"
+                       logger="${dubbo.application.logger}"
+                       compiler="${dubbo.application.compiler}"/>
+
+
+    <dubbo:registry address="${dubbo.registry.address}"/>
+
+    <dubbo:consumer loadbalance="${dubbo.consumer.loadbalance}"
+                    async="${dubbo.consumer.async}"
+                    connections="${dubbo.consumer.connections}"
+                    check="${dubbo.consumer.check}"
+                    proxy="${dubbo.consumer.proxy}"
+                    owner="${dubbo.consumer.owner}"
+                    cluster="${dubbo.consumer.cluster}"
+                    layer="${dubbo.consumer.layer}"
+                    init="${dubbo.consumer.init}"
+                    group="${dubbo.consumer.group}"
+                    version="${dubbo.consumer.version}"
+                    timeout="${dubbo.consumer.timeout}"
+                    retries="${dubbo.consumer.retries}"
+                    filter="ikjConsumerContextFilter"/>
+	
+    <dubbo:reference id="settleStoreOwnerTypeService" owner="lvyz"
+                      interface="com.ikongjian.hades.service.ISettleStoreOwnerTypeService"
+                      url="${dubbo.consumer.reference.url}" />
+</beans>

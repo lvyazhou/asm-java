@@ -41,7 +41,7 @@ public class UserController {
     /**
      * jsonSerializeService
      */
-    @Autowired
+    @Resource
     private JsonSerializeService jsonSerializeService;
 
     @ApiOperation(value = "用户添加")

@@ -32,8 +32,8 @@ public class UserRepositoryImpl extends BaseRepository implements UserRepository
 
     @Override
     public int saveUser(UserEntity user) {
-        redisRepository.set("wowowowowoww", "nininiiniin");
         user.setId(idGeneratorWorker.nextId());
-        return this.userMapper.insert(UserConvert.MAPPER.toUser(user));
+        User userDao = UserConvert.MAPPER.toUser(user);
+        return this.userMapper.insert(userDao);
     }
 }
