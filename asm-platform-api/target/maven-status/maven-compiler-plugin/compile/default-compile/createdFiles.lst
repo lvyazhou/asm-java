@@ -6,8 +6,12 @@ asm\platform\controller\user\AsmUserController.class
 asm\platform\utils\ResponseWriter.class
 asm\platform\datasource\DynamicRoutingDataSource.class
 asm\platform\config\ApiMvcConfig.class
+asm\platform\config\OkHttpConfiguration$1.class
+asm\platform\config\OkHttpConfiguration.class
+asm\platform\config\RestTemplateConfig.class
 asm\platform\config\CorsConfigurer.class
 asm\platform\controller\BaseController.class
+asm\platform\config\TaskPoolConfig.class
 asm\platform\controller\BaseController$1.class
 asm\platform\interceptor\ApiInterceptor.class
 asm\platform\utils\ServletUtils.class

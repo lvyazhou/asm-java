@@ -10,6 +10,7 @@ asm\platform\common\constant\ConstantRegular.class
 asm\platform\repository\db\user\UserRepositoryImpl.class
 com\platform\bean\ResultCode.class
 asm\platform\model\asm\AsmDept.class
+asm\platform\common\enums\ErrorCodeEnum.class
 asm\platform\common\util\GsonMapTypeAdapter.class
 asm\platform\common\util\encrypt\ACICMD5Utils.class
 asm\platform\common\util\GsonUtil$1.class
@@ -46,6 +47,7 @@ asm\platform\common\util\encrypt\WeChatMD5.class
 asm\platform\model\asm\AsmUser.class
 asm\platform\common\constant\Constants.class
 asm\platform\exception\BllException.class
+asm\platform\common\util\OkHttpUtil.class
 asm\platform\convert\asm\AsmUserConvert.class
 asm\platform\common\util\encrypt\SHA256.class
 asm\platform\bean\AjaxResult.class

@@ -1,3 +1,4 @@
+D:\pocProject\asm-platform\asm-platform-api\src\main\java\asm\platform\config\RestTemplateConfig.java
 D:\pocProject\asm-platform\asm-platform-api\src\main\java\asm\platform\controller\login\SSOLoginController.java
 D:\pocProject\asm-platform\asm-platform-api\src\main\java\asm\platform\config\SwaggerConfig.java
 D:\pocProject\asm-platform\asm-platform-api\src\main\java\asm\platform\controller\BaseController.java
@@ -9,6 +10,8 @@ D:\pocProject\asm-platform\asm-platform-api\src\main\java\asm\platform\utils\Con
 D:\pocProject\asm-platform\asm-platform-api\src\main\java\asm\platform\annotation\TargetDataSource.java
 D:\pocProject\asm-platform\asm-platform-api\src\main\java\asm\platform\aspect\ControllerAspect.java
 D:\pocProject\asm-platform\asm-platform-api\src\main\java\asm\platform\config\DruidServletConfig.java
+D:\pocProject\asm-platform\asm-platform-api\src\main\java\asm\platform\config\OkHttpConfiguration.java
+D:\pocProject\asm-platform\asm-platform-api\src\main\java\asm\platform\config\TaskPoolConfig.java
 D:\pocProject\asm-platform\asm-platform-api\src\main\java\asm\platform\config\JedisClusterConfig.java
 D:\pocProject\asm-platform\asm-platform-api\src\main\java\asm\platform\datasource\DynamicRoutingDataSource.java
 D:\pocProject\asm-platform\asm-platform-api\src\main\java\asm\platform\controller\user\AsmUserController.java

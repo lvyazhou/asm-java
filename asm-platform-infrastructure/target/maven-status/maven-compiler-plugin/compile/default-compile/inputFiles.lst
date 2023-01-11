@@ -35,6 +35,7 @@ D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platfor
 D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\common\util\encrypt\base64\Base64OutputStream.java
 D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\common\util\encrypt\base64\Shared.java
 D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\common\util\encrypt\ACICMD5Utils.java
+D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\common\enums\ErrorCodeEnum.java
 D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\repository\mongo\AsmDeptRepository.java
 D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\bean\ResultMsg.java
 D:\pocProject\asm-platform\asm-platform-infrastructure\src\main\java\asm\platform\bean\DataSourceKey.java
