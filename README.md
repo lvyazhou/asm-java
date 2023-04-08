@@ -1,11 +1,8 @@
-# asm 接口 ddd版本
+# asm web server ddd版本
 
-
-[INFO] asm-platform 1.0 ................................... SUCCESS [  3.533 s]
-[INFO] asm-platform-api 1.0 ............................... SUCCESS [ 17.428 s]
-[INFO] asm-platform-start 1.0 ............................. SUCCESS [  2.689 s]
-[INFO] asm-platform-application 1.0 ....................... SUCCESS [  0.158 s]
-[INFO] asm-platform-client 0.0.1-SNAPSHOT ................. SUCCESS [  0.978 s]
-[INFO] asm-platform-infrastructure 0.0.1-SNAPSHOT ......... SUCCESS [  0.180 s]
-[INFO] asm-platform-report 0.0.1-SNAPSHOT ................. SUCCESS [  4.207 s]
-[INFO] asm-platform-task 0.0.1-SNAPSHOT ................... SUCCESS [  3.275 s]
+DDD架构中，能明显看出越外层的代码越稳定，越内层的代码演进越快，真正体现了领域“驱动”的核心思想。
+DDD不是一个什么特殊的架构，而是任何传统代码经过合理的重构之后最终一定会抵达的终点。DDD的架构能够有效的解决传统架构中的问题：
+   *高可维护性：当外部依赖变更时，内部代码只用变更跟外部对接的模块，其他业务逻辑不变。
+   *高可扩展性：做新功能时，绝大部分的代码都能复用，仅需要增加核心业务逻辑即可。
+   *高可测试性：每个拆分出来的模块都符合单一性原则，绝大部分不依赖框架，可以快速的单元测试，做到100%覆盖。
+   *代码结构清晰：通过POM module可以解决模块间的依赖关系， 所有外接模块都可以单独独立成Jar包被复用。当团队形成规范后，可以快速的定位到相关代码。
